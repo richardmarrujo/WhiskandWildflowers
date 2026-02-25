@@ -1,19 +1,24 @@
-body {
+body { 
     font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Navbar */
+/* ===============================
+   Sticky Glass Navbar
+================================= */
 .custom-navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: rgba(255, 240, 245, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 240, 245, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    transition: background 0.3s ease;
 }
+
 .custom-navbar.scrolled {
     background: rgba(255, 240, 245, 0.9);
 }
@@ -44,10 +49,12 @@ body {
     transform: scale(1.2);
 }
 
-
-/* Hero Section */
+/* ===============================
+   Hero Section
+================================= */
 #home {
     position: relative;
+    z-index: 1; /* above cupcakes */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -63,17 +70,20 @@ body {
 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Desktop parallax */
+    background-attachment: fixed;
 }
 
 /* Mobile Fix */
 @media (max-width: 768px) {
     #home {
-        background-attachment: scroll; /* Fix mobile glitching */
-        height: 80vh; /* Slightly shorter for phones */
+        background-attachment: scroll;
+        height: 85vh;
     }
 }
 
+/* ===============================
+   Floating Sections Over Hero
+================================= */
 section:not(#home) {
     background-color: white;
     position: relative;
@@ -82,73 +92,54 @@ section:not(#home) {
 
 #products,
 #contact {
-    margin-top: -50px;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+    margin-top: -60px;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 -15px 40px rgba(0,0,0,0.08);
 }
 
-
-/* Cards */
+/* ===============================
+   Cards
+================================= */
 .card {
     margin-bottom: 20px;
     border: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card-img-top {
     height: 250px;
     object-fit: cover;
+    border-radius: 15px 15px 0 0;
 }
 
-/* Pink Buttons */
-.btn-pink {
+/* ===============================
+   Pink Buttons
+================================= */
+.btn-pink,
+.btn-primary {
     background-color: #ff69b4;
     color: white;
     border: none;
 }
 
-.btn-pink:hover {
+.btn-pink:hover,
+.btn-primary:hover {
     background-color: #d63384;
 }
 
-/* Footer */
+/* ===============================
+   Footer
+================================= */
 .custom-footer {
     background-color: #d63384;
 }
 
-/* Floating Cupcakes */
-.cupcake {
-    position: fixed;
-    font-size: 40px;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 0;
-    animation: float 6s ease-in-out infinite;
-}
-
-.cupcake1 {
-    top: 20%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.cupcake2 {
-    bottom: 25%;
-    right: 8%;
-    animation-delay: 2s;
-}
-
-.cupcake3 {
-    top: 60%;
-    left: 80%;
-    animation-delay: 4s;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-}
-
-
-
+/* ===============================
+   Floating Cupcakes
+===========
