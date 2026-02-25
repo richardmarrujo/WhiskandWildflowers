@@ -34,7 +34,7 @@ body {
 
 .cupcake4 {
     bottom: 10%;
-    left: 40%;
+    left: 8%;
     animation-delay: 6s;
 }
 
@@ -189,4 +189,5 @@ section:not(#home) {
 .custom-footer {
     background-color: #d63384;
 }
+
 
