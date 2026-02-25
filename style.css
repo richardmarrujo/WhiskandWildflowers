@@ -34,7 +34,7 @@ body {
 
 .cupcake4 {
     bottom: 10%;
-    left: 8%;
+    left: 7%;
     animation-delay: 6s;
 }
 
@@ -47,11 +47,11 @@ body {
 
 
 /* Hide cupcakes on very small screens for performance */
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
     .cupcake {
         display: none;
     }
-}
+} */
 
 /* ===============================
    Sticky Glass Navbar
@@ -189,5 +189,6 @@ section:not(#home) {
 .custom-footer {
     background-color: #d63384;
 }
+
 
 
