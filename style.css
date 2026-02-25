@@ -219,6 +219,15 @@ section:not(#home) {
     background-color: #d63384;
 }
 
+.product-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: .8px #ff69b4;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+
 /* ===============================
    Footer
 ================================= */
