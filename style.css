@@ -9,7 +9,7 @@ body {
     font-size: 80px;          /* Bigger */
     opacity: 0.25;            /* 25% opacity */
     pointer-events: none;     /* Prevent blocking clicks */
-    z-index: 10;               /* Behind content */
+    z-index: 2;               /* Behind content */
     animation: float 8s ease-in-out infinite;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .cupcake2 {
-    bottom: 20%;
+    top: 30%;
     right: 8%;
     animation-delay: 2s;
 }
@@ -189,6 +189,7 @@ section:not(#home) {
 .custom-footer {
     background-color: #d63384;
 }
+
 
 
 
