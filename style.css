@@ -4,8 +4,18 @@ body {
 
 /* Navbar */
 .custom-navbar {
-    background-color: #fff0f5;
-    /* floral pink */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 240, 245, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.custom-navbar.scrolled {
+    background: rgba(255, 240, 245, 0.9);
 }
 
 .navbar-brand {
@@ -32,12 +42,6 @@ body {
 .nav-social:hover {
     color: #d63384;
     transform: scale(1.2);
-}
-
-section {
-    background-color: white;
-    position: relative;
-    z-index: 2;
 }
 
 
@@ -70,6 +74,20 @@ section {
     }
 }
 
+section:not(#home) {
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+#products,
+#contact {
+    margin-top: -50px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+
 /* Cards */
 .card {
     margin-bottom: 20px;
@@ -97,4 +115,40 @@ section {
 .custom-footer {
     background-color: #d63384;
 }
+
+/* Floating Cupcakes */
+.cupcake {
+    position: fixed;
+    font-size: 40px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+.cupcake1 {
+    top: 20%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.cupcake2 {
+    bottom: 25%;
+    right: 8%;
+    animation-delay: 2s;
+}
+
+.cupcake3 {
+    top: 60%;
+    left: 80%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+
 
