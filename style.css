@@ -2,22 +2,78 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+/* Navbar */
+.custom-navbar {
+    background-color: #fff0f5;
+    /* floral pink */
+}
+
+.navbar-brand {
+    color: #d63384 !important;
+}
+
+.nav-link {
+    color: #d63384 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ff69b4 !important;
+}
+
+/* Social Icons */
+.nav-social {
+    color: #ff69b4;
+    font-size: 20px;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.nav-social:hover {
+    color: #d63384;
+    transform: scale(1.2);
+}
+
+/* Hero Section */
 #home {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
     background-image: linear-gradient(rgba(255, 182, 193, 0.6),
             rgba(255, 182, 193, 0.6)),
         url('images/wwbannerpic.jpg');
+
     background-size: cover;
     background-position: center;
 }
 
+/* Cards */
 .card {
     margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background-color: #333;
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Pink Buttons */
+.btn-pink {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+}
+
+.btn-pink:hover {
+    background-color: #d63384;
+}
+
+/* Footer */
+.custom-footer {
+    background-color: #d63384;
 }
