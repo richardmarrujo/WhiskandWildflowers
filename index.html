@@ -5,22 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whisks & Wildflowers</title>
+
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Whisks & Wildflowers</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+        <a class="navbar-brand font-weight-bold" href="#">Whisks & Wildflowers</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+            <!-- Spacer -->
+            <div></div>
+
+            <!-- Social Icons Center -->
+            <div class="d-flex justify-content-center social-center">
+                <a href="https://www.facebook.com/profile.php?id=61588523347694" target="_blank" class="nav-social">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="nav-social">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" class="nav-social">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+
+            <!-- Menu Right -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
                     <a class="nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
@@ -30,19 +56,20 @@
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
+
         </div>
     </nav>
 
     <!-- Home Section -->
     <section id="home" class="text-center text-white">
         <div class="container">
-            <h1> Welcome to Whisks & Wildflowers </h1>
-                <p>🧡 Four moms </p>
-                <p>🍫 Sweet treats</p>
-                <p>🫶🏼 Made with love</p>
-                <p>✨ Event themes welcome</p>
-                <p>📲 Help us make life a little sweeter,</p>
-            <a href="#contact" class="btn btn-lg btn-light">Message us for a quote! 🤗</a>
+            <h1 class="display-4 font-weight-bold">Welcome to Whisks & Wildflowers</h1>
+            <p>🧡 Four moms</p>
+            <p>🍫 Sweet treats</p>
+            <p>🫶🏼 Made with love</p>
+            <p>✨ Event themes welcome</p>
+            <p>📲 Help us make life a little sweeter</p>
+            <a href="#contact" class="btn btn-light btn-lg mt-3">Message us for a quote! 🤗</a>
         </div>
     </section>
 
@@ -51,66 +78,21 @@
         <div class="container">
             <h2 class="text-center mb-4">Our Products</h2>
             <div class="row">
+
+                <!-- Product Card -->
                 <div class="col-md-4">
                     <div class="card">
                         <img src="images/wwcakepops.jpg" class="card-img-top" alt="Cake Pops">
-                        <div class="card-body">
-                            <h5 class="card-title">Cake Popsicles </h5>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cake Popsicles</h5>
                             <p class="card-text">$15.99</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
+                            <a href="#" class="btn btn-pink">Add to cart</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/wwcookiepucks.jpg" class="card-img-top" alt="Product pic">
-                        <div class="card-body">
-                            <h5 class="card-title">Cake Popsicles </h5>
-                            <p class="card-text">$15.99</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/wwwafers.jpg" class="card-img-top" alt="Product pic">
-                        <div class="card-body">
-                            <h5 class="card-title">Cake Popsicles </h5>
-                            <p class="card-text">$15.99</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/wwcakepucks.jpg" class="card-img-top" alt="Product pic">
-                        <div class="card-body">
-                            <h5 class="card-title">Cake Popsicles </h5>
-                            <p class="card-text">$15.99</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/ww.pretzelrods.jpg" class="card-img-top" alt="Product pic">
-                        <div class="card-body">
-                            <h5 class="card-title">Cake Popsicles </h5>
-                            <p class="card-text">$15.99</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/wwricekrispies.jpg" class="card-img-top" alt="Product pic">
-                        <div class="card-body">
-                            <h5 class="card-title">Cake Popsicles </h5>
-                            <p class="card-text">$15.99</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Duplicate and adjust as needed -->
+
             </div>
         </div>
     </section>
@@ -119,31 +101,31 @@
     <section id="contact" class="bg-light py-5">
         <div class="container">
             <h2 class="text-center mb-4">Got a question? Contact Us</h2>
-            <form id="contactForm">
+            <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        <input type="text" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        <input type="email" class="form-control" placeholder="Your Email" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" class="btn btn-pink">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-        &copy; 2024 Whisks & Wildflowers | All Rights Reserved
+    <footer class="text-white text-center py-3 custom-footer">
+        &copy; 2026 Whisks & Wildflowers | Made with 💕
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
