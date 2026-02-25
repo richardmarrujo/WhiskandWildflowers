@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('images\wwbannerpic.jpg');
+    /*background-image: url('images\wwbannerpic.jpg'); */
     background-size: cover;
     background-position: center;
 }
@@ -19,4 +19,5 @@ body {
 footer {
     background-color: #333;
 }
+
 
