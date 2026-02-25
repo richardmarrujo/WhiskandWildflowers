@@ -140,6 +140,52 @@ section:not(#home) {
     background-color: #d63384;
 }
 
-/* ===============================
-   Floating Cupcakes
-===========
+/* Floating Cupcakes */
+.cupcake {
+    position: fixed;
+    font-size: 80px;          /* Bigger */
+    opacity: 0.25;            /* 25% opacity */
+    pointer-events: none;     /* Prevent blocking clicks */
+    z-index: 0;               /* Behind content */
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Individual positions */
+.cupcake1 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.cupcake2 {
+    bottom: 20%;
+    right: 8%;
+    animation-delay: 2s;
+}
+
+.cupcake3 {
+    top: 65%;
+    left: 80%;
+    animation-delay: 4s;
+}
+
+.cupcake4 {
+    bottom: 10%;
+    left: 40%;
+    animation-delay: 6s;
+}
+
+/* Floating animation */
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-30px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* Hide cupcakes on very small screens for performance */
+@media (max-width: 600px) {
+    .cupcake {
+        display: none;
+    }
+}
