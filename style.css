@@ -3,10 +3,16 @@ body {
     overflow-x: hidden;
 }
 
+p {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    font-size: 1.2rem;
+}
+
 /* Floating Cupcakes - Deluxe Version */
 .cupcake {
     position: fixed;
-    font-size: 40px;
+    font-size: 60px;
     opacity: 0.18;
     pointer-events: none;
     z-index: 2;
@@ -69,7 +75,17 @@ body {
 /* Hide cupcakes on very small screens for performance */
 @media (max-width: 375px) {
     .cupcake {
-        display: none;
+    position: fixed;
+    font-size: 40px;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 2;
+
+    animation:
+        fadeIn 2s ease forwards,
+        floatRotate 8s ease-in-out infinite,
+        sparkle 4s ease-in-out infinite;
+}
     }
 }
 
