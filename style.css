@@ -9,7 +9,7 @@ body {
     font-size: 80px;          /* Bigger */
     opacity: 0.25;            /* 25% opacity */
     pointer-events: none;     /* Prevent blocking clicks */
-    z-index: 0;               /* Behind content */
+    z-index: 10;               /* Behind content */
     animation: float 8s ease-in-out infinite;
 }
 
@@ -189,3 +189,4 @@ section:not(#home) {
 .custom-footer {
     background-color: #d63384;
 }
+
