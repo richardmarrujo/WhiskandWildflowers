@@ -34,20 +34,40 @@ body {
     transform: scale(1.2);
 }
 
+section {
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+
 /* Hero Section */
 #home {
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: white;
 
-    background-image: linear-gradient(rgba(255, 182, 193, 0.6),
-            rgba(255, 182, 193, 0.6)),
-        url('images/wwbannerpic.jpg');
+    background-image: linear-gradient(
+        rgba(255, 182, 193, 0.6),
+        rgba(255, 182, 193, 0.6)
+    ),
+    url('images/wwbannerpic.jpg');
 
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Desktop parallax */
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    #home {
+        background-attachment: scroll; /* Fix mobile glitching */
+        height: 80vh; /* Slightly shorter for phones */
+    }
 }
 
 /* Cards */
@@ -77,3 +97,4 @@ body {
 .custom-footer {
     background-color: #d63384;
 }
+
