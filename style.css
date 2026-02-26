@@ -9,14 +9,15 @@ p {
     font-size: 1.2rem;
 }
 
-/* Floating Cupcakes - Deluxe Version */
+/* ===============================
+   Floating Cupcakes
+================================= */
 .cupcake {
     position: fixed;
     font-size: 60px;
     opacity: 0.18;
     pointer-events: none;
     z-index: 2;
-
     animation:
         fadeIn 2s ease forwards,
         floatRotate 8s ease-in-out infinite,
@@ -36,7 +37,6 @@ p {
         transform: translateY(0px) rotate(0deg);
     }
 }
-
 
 /* Individual positions */
 .cupcake1 {
@@ -86,16 +86,8 @@ p {
 /* Hide cupcakes on very small screens for performance */
 @media (max-width: 375px) {
     .cupcake {
-        position: fixed;
         font-size: 40px;
         opacity: 0.18;
-        pointer-events: none;
-        z-index: 2;
-
-        animation:
-            fadeIn 2s ease forwards,
-            floatRotate 8s ease-in-out infinite,
-            sparkle 4s ease-in-out infinite;
     }
 }
 
@@ -106,11 +98,9 @@ p {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     background: rgba(255, 240, 245, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     transition: background 0.3s ease;
 }
@@ -132,7 +122,6 @@ p {
     color: #ff69b4 !important;
 }
 
-/* Social Icons */
 .nav-social {
     color: #ff69b4;
     font-size: 20px;
@@ -146,33 +135,38 @@ p {
 }
 
 /* ===============================
-   Hero Section 
-   ================================= */
-
+   Hero Section
+================================= */
 #home {
     position: relative;
     z-index: 1;
     min-height: 80vh;
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffd1dc);
+}
 
-    background: linear-gradient(135deg,
-            #ffb6c1,
-            #ffc0cb,
-            #ffd1dc);
+@media (max-width: 768px) {
+    #home {
+        background-attachment: scroll;
+        height: 85vh;
+    }
 }
 
 /* ===============================
-   Header Banner Image
+   Header Banner (Image or Video)
 ================================= */
-
 .header-banner {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd1dc;
+    padding: 20px 0;
     overflow: hidden;
 }
 
@@ -181,29 +175,20 @@ p {
     height: auto;
     display: block;
     box-shadow: 0 10px 40px rgba(255, 105, 180, 0.25);
-}
-
-/* ===============================
-   Responsive Video Banner
-================================= */
-
-.header-banner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffd1dc;
-    /* soft pink background */
-    padding: 20px 0;
+    border-radius: 20px;
 }
 
 .header-banner video {
-    width: 95%;   /* mobile default */
+    width: auto;
+    max-width: 360px;
+    max-height: 640px;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
     opacity: 0;
     transform: scale(0.98);
     transition: opacity 1.5s ease, transform 1.5s ease;
+    object-fit: cover;
 }
 
 .header-banner video.loaded {
@@ -211,29 +196,23 @@ p {
     transform: scale(1);
 }
 
+/* Mobile video */
 @media (max-width: 768px) {
     .header-banner video {
         width: 95%;
-        height: 65vh; /* taller on phones */
-        object-fit: cover; /* fills nicely */
+        height: 70vh;
+        max-height: none;
+        object-fit: cover;
     }
 }
 
- /* pc version */
+/* PC video styling */
 @media (min-width: 769px) {
     .header-banner video {
         width: 360px;
         height: auto;
         border: 8px solid white;
         border-radius: 25px;
-    }
-}
-
-/* Mobile Fix */
-@media (max-width: 768px) {
-    #home {
-        background-attachment: scroll;
-        height: 85vh;
     }
 }
 
@@ -253,29 +232,22 @@ section:not(#home) {
     box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* ============================= */
-/* Luxury Bakery Carousel */
-/* ============================= */
-
+/* ===============================
+   Luxury Bakery Carousel
+================================= */
 .bakery-carousel {
     max-width: 900px;
     margin: 0 auto;
     border-radius: 25px;
     overflow: hidden;
-
-    /* Soft pink glow */
-    box-shadow:
-        0 10px 40px rgba(255, 105, 180, 0.3),
-        0 0 25px rgba(255, 182, 193, 0.4);
+    box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3), 0 0 25px rgba(255, 182, 193, 0.4);
 }
 
-/* Images */
 .bakery-carousel img {
     height: 450px;
     object-fit: cover;
 }
 
-/* Fade animation smoothing */
 .carousel-fade .carousel-item {
     transition: opacity 0.8s ease-in-out;
 }
@@ -337,10 +309,11 @@ section:not(#home) {
     height: 250px;
     object-fit: cover;
     border-radius: 15px;
+    /* top + bottom rounded */
 }
 
 /* ===============================
-   Pink Buttons
+   Buttons
 ================================= */
 .btn-pink,
 .btn-primary {
@@ -354,6 +327,7 @@ section:not(#home) {
     background-color: #d63384;
 }
 
+/* Product Text Style */
 .product-text {
     background-clip: text;
     -webkit-background-clip: text;
@@ -362,7 +336,6 @@ section:not(#home) {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
-
 
 /* ===============================
    Footer
