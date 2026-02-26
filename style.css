@@ -98,7 +98,6 @@ p {
             sparkle 4s ease-in-out infinite;
     }
 }
-}
 
 /* ===============================
    Sticky Glass Navbar
@@ -149,23 +148,33 @@ p {
 /* ===============================
    Hero Section 
    ================================= */
+/* ===============================
+   Fully Responsive Hero Section
+================================= */
+
 #home {
     position: relative;
     z-index: 1;
-    /* above cupcakes */
-    height: 100vh;
+    min-height: 100svh;
+    /* Better mobile viewport handling */
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
 
-    background-image: linear-gradient(rgba(255, 182, 193, 0.6),
-            rgba(255, 182, 193, 0.6)),
+    /* Background Image */
+    background-image:
+        linear-gradient(rgba(255, 182, 193, 0.55),
+            rgba(255, 182, 193, 0.55)),
         url('images/Now_Open.PNG');
+
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    /* Always fills */
 }
 
 /* Mobile Fix */
@@ -305,5 +314,5 @@ section:not(#home) {
    Footer
 ================================= */
 .custom-footer {
-    background-color: #d63384;
+    background-color: #ff69b4;
 }
