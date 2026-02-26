@@ -1,5 +1,5 @@
 /* ===============================
-   Global
+   Global Styles
 ================================= */
 body {
     font-family: 'Arial', sans-serif;
@@ -7,9 +7,8 @@ body {
 }
 
 p {
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
     font-size: 1.2rem;
+    overflow-x: hidden;
 }
 
 /* ===============================
@@ -18,18 +17,17 @@ p {
 .cupcake {
     position: fixed;
     font-size: 60px;
-    opacity: 0.18;
+    opacity: 0.25;
     pointer-events: none;
     z-index: 2;
-    animation:
-        fadeIn 2s ease forwards,
+    animation: fadeIn 2s ease forwards,
         floatRotate 8s ease-in-out infinite,
         sparkle 4s ease-in-out infinite;
 }
 
 @keyframes floatRotate {
     0% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(0) rotate(0deg);
     }
 
     50% {
@@ -37,48 +35,21 @@ p {
     }
 
     100% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(0) rotate(0deg);
     }
 }
 
-/* Individual positions */
-.cupcake1 {
-    top: 15%;
-    left: 5%;
-    animation-delay: 0s, 0s, 0s, 1s;
-}
-
-.cupcake2 {
-    top: 30%;
-    right: 5%;
-    animation-delay: 0.5s, 2s, 0s, 2s;
-}
-
-.cupcake3 {
-    bottom: 20%;
-    right: 8%;
-    animation-delay: 1s, 4s, 0s, 3s;
-}
-
-.cupcake4 {
-    bottom: 10%;
-    left: 8%;
-    animation-delay: 1s, 4s, 0s, 3s;
-}
-
-/* Fade In */
 @keyframes fadeIn {
     to {
         opacity: 0.25;
     }
 }
 
-/* Subtle Sparkle Effect */
 @keyframes sparkle {
 
     0%,
     100% {
-        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
     }
 
     50% {
@@ -86,16 +57,34 @@ p {
     }
 }
 
-/* Hide cupcakes on very small screens for performance */
+.cupcake1 {
+    top: 15%;
+    left: 5%;
+}
+
+.cupcake2 {
+    top: 30%;
+    right: 5%;
+}
+
+.cupcake3 {
+    bottom: 20%;
+    right: 8%;
+}
+
+.cupcake4 {
+    bottom: 10%;
+    left: 8%;
+}
+
 @media (max-width: 375px) {
     .cupcake {
         font-size: 40px;
-        opacity: 0.18;
     }
 }
 
 /* ===============================
-   Sticky Glass Navbar
+   Navbar
 ================================= */
 .custom-navbar {
     position: sticky;
@@ -103,9 +92,8 @@ p {
     z-index: 1000;
     background: rgba(255, 240, 245, 0.65);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .custom-navbar.scrolled {
@@ -153,15 +141,8 @@ p {
     background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffd1dc);
 }
 
-@media (max-width: 768px) {
-    #home {
-        background-attachment: scroll;
-        height: 85vh;
-    }
-}
-
 /* ===============================
-   Header Banner (Image or Video)
+   Header Banner Video
 ================================= */
 .header-banner {
     width: 100%;
@@ -170,21 +151,17 @@ p {
     align-items: center;
     background-color: #ffd1dc;
     padding: 20px 0;
-    overflow: hidden;
 }
 
 .header-banner video {
     width: 95%;
-    max-width: 720px;
-    /* keep original frame width in mind */
+    max-width: 400px;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
     opacity: 0;
     transform: scale(0.98);
     transition: opacity 1.5s ease, transform 1.5s ease;
-    object-fit: cover;
-    /* fill container without breaking aspect ratio */
 }
 
 .header-banner video.loaded {
@@ -192,32 +169,19 @@ p {
     transform: scale(1);
 }
 
-/* Mobile version */
 @media (max-width: 768px) {
     .header-banner video {
         width: 95%;
-        height: 70vh;
-        /* taller on phones */
-        max-height: none;
-    }
-}
-
-/* Desktop version */
-@media (min-width: 769px) {
-    .header-banner video {
-        width: auto;
-        height: 480px;
-        /* pick a good visible height */
-        max-width: 720px;
-        border-radius: 25px;
+        height: 65vh;
+        object-fit: cover;
     }
 }
 
 /* ===============================
-   Floating Sections Over Hero
+   Sections & Cards
 ================================= */
 section:not(#home) {
-    background-color: white;
+    background: white;
     position: relative;
     z-index: 2;
 }
@@ -229,73 +193,13 @@ section:not(#home) {
     box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* ===============================
-   Luxury Bakery Carousel
-================================= */
-.bakery-carousel {
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3), 0 0 25px rgba(255, 182, 193, 0.4);
-}
-
-.bakery-carousel img {
-    height: 450px;
-    object-fit: cover;
-}
-
-.carousel-fade .carousel-item {
-    transition: opacity 0.8s ease-in-out;
-}
-
-/* Pink indicator dots */
-.carousel-indicators li {
-    background-color: #ff69b4;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.carousel-indicators .active {
-    background-color: #d63384;
-}
-
-/* Custom Pink Arrows */
-.custom-arrow-icon {
-    background-color: #ff69b4;
-    border-radius: 50%;
-    padding: 28px;
-    background-size: 60% 60%;
-    transition: 0.3s ease;
-}
-
-.custom-arrow:hover .custom-arrow-icon {
-    background-color: #d63384;
-    transform: scale(1.1);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .bakery-carousel img {
-        height: 300px;
-    }
-
-    .custom-arrow-icon {
-        padding: 18px;
-    }
-}
-
-/* ===============================
-   Cards
-================================= */
 .card {
     margin-bottom: 20px;
     border: none;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .card:hover {
@@ -306,7 +210,6 @@ section:not(#home) {
     height: 250px;
     object-fit: cover;
     border-radius: 15px;
-    /* top + bottom rounded */
 }
 
 /* ===============================
@@ -324,19 +227,74 @@ section:not(#home) {
     background-color: #d63384;
 }
 
-/* Product Text Style */
+/* ===============================
+   Carousel
+================================= */
+.bakery-carousel {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow:
+        0 10px 40px rgba(255, 105, 180, 0.3),
+        0 0 25px rgba(255, 182, 193, 0.4);
+}
+
+.bakery-carousel img {
+    height: 450px;
+    object-fit: cover;
+}
+
+.carousel-fade .carousel-item {
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-indicators li {
+    background-color: #ff69b4;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: #d63384;
+}
+
+.custom-arrow-icon {
+    background-color: #ff69b4;
+    border-radius: 50%;
+    padding: 28px;
+    background-size: 60% 60%;
+    transition: 0.3s;
+}
+
+.custom-arrow:hover .custom-arrow-icon {
+    background-color: #d63384;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .bakery-carousel img {
+        height: 300px;
+    }
+
+    .custom-arrow-icon {
+        padding: 18px;
+    }
+}
+
+/* ===============================
+   Footer & Text Effects
+================================= */
+.custom-footer {
+    background-color: #ff69b4;
+}
+
 .product-text {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: white;
-    -webkit-text-stroke: .8px #ff69b4;
+    -webkit-text-stroke: 0.8px #ff69b4;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
-}
-
-/* ===============================
-   Footer
-================================= */
-.custom-footer {
-    background-color: #ff69b4;
 }
