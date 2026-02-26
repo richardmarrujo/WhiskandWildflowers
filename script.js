@@ -36,11 +36,30 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     }
 });
 
+// Auto pause video when off screen
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("heroVideo");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        },
+        {
+            threshold: 0.5 // 50% visible before playing
+        }
+    );
+
+    observer.observe(video);
+});
+
 const video = document.getElementById("heroVideo");
 
 video.addEventListener("loadeddata", () => {
     video.classList.add("loaded");
 });
-
-
-
