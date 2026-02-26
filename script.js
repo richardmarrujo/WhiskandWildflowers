@@ -35,3 +35,12 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         alert("Please fill in all fields.");
     }
 });
+
+const video = document.getElementById("heroVideo");
+
+video.addEventListener("loadeddata", () => {
+    video.classList.add("loaded");
+});
+
+
+
