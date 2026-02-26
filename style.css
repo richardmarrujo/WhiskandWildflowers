@@ -1,4 +1,4 @@
-body { 
+body {
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
 }
@@ -24,9 +24,17 @@ p {
 }
 
 @keyframes floatRotate {
-    0%   { transform: translateY(0px) rotate(0deg); }
-    50%  { transform: translateY(-25px) rotate(8deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 
@@ -64,29 +72,32 @@ p {
 
 /* Subtle Sparkle Effect */
 @keyframes sparkle {
-    0%, 100% {
-        filter: drop-shadow(0 0 0px rgba(255,255,255,0));
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
     }
+
     50% {
-        filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
     }
 }
 
 /* Hide cupcakes on very small screens for performance */
 @media (max-width: 375px) {
     .cupcake {
-    position: fixed;
-    font-size: 40px;
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 2;
+        position: fixed;
+        font-size: 40px;
+        opacity: 0.18;
+        pointer-events: none;
+        z-index: 2;
 
-    animation:
-        fadeIn 2s ease forwards,
-        floatRotate 8s ease-in-out infinite,
-        sparkle 4s ease-in-out infinite;
-}
+        animation:
+            fadeIn 2s ease forwards,
+            floatRotate 8s ease-in-out infinite,
+            sparkle 4s ease-in-out infinite;
     }
+}
 }
 
 /* ===============================
@@ -101,7 +112,7 @@ p {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     transition: background 0.3s ease;
 }
 
@@ -136,11 +147,12 @@ p {
 }
 
 /* ===============================
-   Hero Section
-================================= */
+   Hero Section 
+   ================================= */
 #home {
     position: relative;
-    z-index: 1; /* above cupcakes */
+    z-index: 1;
+    /* above cupcakes */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -148,12 +160,9 @@ p {
     text-align: center;
     color: white;
 
-    background-image: linear-gradient(
-        rgba(255, 182, 193, 0.6),
-        rgba(255, 182, 193, 0.6)
-    ),
-    url('images/wwbannerpic.jpg');
-
+    background-image: linear-gradient(rgba(255, 182, 193, 0.6),
+            rgba(255, 182, 193, 0.6)),
+        url('images/wwbannerpic.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -180,7 +189,71 @@ section:not(#home) {
 #contact {
     margin-top: -60px;
     border-radius: 25px 25px 0 0;
-    box-shadow: 0 -15px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================= */
+/* Luxury Bakery Carousel */
+/* ============================= */
+
+.bakery-carousel {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
+
+    /* Soft pink glow */
+    box-shadow:
+        0 10px 40px rgba(255, 105, 180, 0.3),
+        0 0 25px rgba(255, 182, 193, 0.4);
+}
+
+/* Images */
+.bakery-carousel img {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Fade animation smoothing */
+.carousel-fade .carousel-item {
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Pink indicator dots */
+.carousel-indicators li {
+    background-color: #ff69b4;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: #d63384;
+}
+
+/* Custom Pink Arrows */
+.custom-arrow-icon {
+    background-color: #ff69b4;
+    border-radius: 50%;
+    padding: 28px;
+    background-size: 60% 60%;
+    transition: 0.3s ease;
+}
+
+.custom-arrow:hover .custom-arrow-icon {
+    background-color: #d63384;
+    transform: scale(1.1);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .bakery-carousel img {
+        height: 300px;
+    }
+
+    .custom-arrow-icon {
+        padding: 18px;
+    }
 }
 
 /* ===============================
@@ -223,7 +296,7 @@ section:not(#home) {
     -webkit-background-clip: text;
     -webkit-text-fill-color: white;
     -webkit-text-stroke: .8px #ff69b4;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
