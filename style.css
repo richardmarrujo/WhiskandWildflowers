@@ -152,11 +152,14 @@ p {
    Fully Responsive Hero Section
 ================================= */
 
+/* ===============================
+   Hero Section (Soft Pink)
+================================= */
+
 #home {
     position: relative;
     z-index: 1;
-    min-height: 100svh;
-    /* Better mobile viewport handling */
+    min-height: 80vh;
     width: 100%;
 
     display: flex;
@@ -165,16 +168,34 @@ p {
     text-align: center;
     color: white;
 
-    /* Background Image */
-    background-image:
-        linear-gradient(rgba(255, 182, 193, 0.55),
-            rgba(255, 182, 193, 0.55)),
-        url('images/Now_Open.PNG');
+    background: linear-gradient(135deg,
+            #ffb6c1,
+            #ffc0cb,
+            #ffd1dc);
+}
 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    /* Always fills */
+/* ===============================
+   Header Banner Image
+================================= */
+
+.header-banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 40px rgba(255, 105, 180, 0.25);
+}
+
+/* Optional: make it shorter on mobile */
+@media (max-width: 768px) {
+    .header-banner img {
+        max-height: 300px;
+        object-fit: cover;
+    }
 }
 
 /* Mobile Fix */
