@@ -1,3 +1,6 @@
+/* ===============================
+   Global
+================================= */
 body {
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
@@ -170,18 +173,10 @@ p {
     overflow: hidden;
 }
 
-.header-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    box-shadow: 0 10px 40px rgba(255, 105, 180, 0.25);
-    border-radius: 20px;
-}
-
 .header-banner video {
-    width: auto;
-    max-width: 360px;
-    max-height: 640px;
+    width: 95%;
+    max-width: 720px;
+    /* keep original frame width in mind */
     height: auto;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
@@ -189,6 +184,7 @@ p {
     transform: scale(0.98);
     transition: opacity 1.5s ease, transform 1.5s ease;
     object-fit: cover;
+    /* fill container without breaking aspect ratio */
 }
 
 .header-banner video.loaded {
@@ -196,22 +192,23 @@ p {
     transform: scale(1);
 }
 
-/* Mobile video */
+/* Mobile version */
 @media (max-width: 768px) {
     .header-banner video {
         width: 95%;
         height: 70vh;
+        /* taller on phones */
         max-height: none;
-        object-fit: cover;
     }
 }
 
-/* PC video styling */
+/* Desktop version */
 @media (min-width: 769px) {
     .header-banner video {
-        width: 360px;
-        height: auto;
-        border: 8px solid white;
+        width: auto;
+        height: 480px;
+        /* pick a good visible height */
+        max-width: 720px;
         border-radius: 25px;
     }
 }
